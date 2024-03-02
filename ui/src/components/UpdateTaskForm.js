@@ -13,14 +13,14 @@ const UpdateTaskForm = ({
 }) => {
   const { id, name, completed } = task;
   const [taskName, setTaskName] = useState(name);
-  const updateTask = () => {
+  const updateTask = async () => {
     try {
       axios.put(`${API_URL}`, {
         id,
         name: taskName,
         completed,
       });
-      fetchTasks();
+      await fetchTasks();
       setIsDialogOpen(false);
     } catch (error) {
       console.error(error);
