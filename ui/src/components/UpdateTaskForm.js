@@ -21,7 +21,6 @@ const UpdateTaskForm = ({
         completed,
       });
       await fetchTasks();
-      setIsDialogOpen(false);
     } catch (error) {
       console.error(error);
     }
@@ -39,7 +38,10 @@ const UpdateTaskForm = ({
         <Button
           variant="contained"
           color="primary"
-          onClick={async () => updateTask}
+          onClick={async () => {
+            updateTask();
+            setIsDialogOpen(false);
+          }}
           disabled={taskName.length === 0 || taskName === name}
         >
           <CheckIcon />
