@@ -15,7 +15,7 @@ const UpdateTaskForm = ({
   const [taskName, setTaskName] = useState(name);
   const updateTask = async () => {
     try {
-      axios.put(`${API_URL}`, {
+      await axios.put(`${API_URL}`, {
         id,
         name: taskName,
         completed,
