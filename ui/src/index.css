@@ -1,0 +1,12 @@
+.taskItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.taskItem div {
+    margin: 30px;
+}
+
+.done {
+    text-decoration: line-through;
+}
